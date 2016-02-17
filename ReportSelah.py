@@ -86,10 +86,10 @@ if __name__ == '__main__':
 
     # Script tool params
 
-    SummaryLayer = r'R:\disk_5\projects\county\planning\uga_analysis\selah\Analysis_2015\StudyData.gdb\SelahUGA_020216'
+    SummaryLayer = r'R:\disk_5\projects\county\planning\uga_analysis\selah\Analysis_2015\StudyData.gdb\SelahUGA_021716'
     baseFileLocation = r'R:\disk_5\projects\county\planning\uga_analysis\selah\Analysis_2015'
     fileGeoLocation = r'R:\disk_5\projects\county\planning\uga_analysis\selah\Analysis_2015\StudyData.gdb'
-    reportFile = os.path.join(baseFileLocation, "SelahReport_020216.txt")
+    reportFile = os.path.join(baseFileLocation, "SelahReport_021716.txt")
     print reportFile
     value_field = 'ACRES'
     value_vacant = 'ACRES_VAC'
@@ -288,47 +288,47 @@ if __name__ == '__main__':
     line = '     Total Developed Outside City Limits: ' + str("%.2f" % totalResOccUGA) + '\n' + '\n'
     f.write(line)
 
-    #Planned Development
-    line = 'Planned Development' + '\n'
-    f.write(line)
-    whereClause = '"ZoneGroup" = ' + "'PD'"
-    total = findTotals(SummaryLayer, value_vacant, whereClause)
-    total2 = findTotals(SummaryLayer, value_occupied, whereClause)
-    grandtotal = total + total2
-    line = 'Total Planned Development: ' + str("%.2f" % grandtotal) + '\n'
-    f.write(line)
-    #Total Planned Development City
-    whereClause = '"ZoneGroup" = ' + "'PD'" + "AND" + '"CITY" = ' + '1'
-    totalResVacCity = findTotals(SummaryLayer, value_vacant, whereClause)
-    totalResOccCity = findTotals(SummaryLayer, value_occupied, whereClause)
-    totalResCity = totalResOccCity + totalResVacCity
-    line = "Total Planned Development Within the City: " + str("%.2f" % totalResCity) + '\n'
-    f.write(line)
-    #Total Planned Development UGA
-    whereClause = '"ZoneGroup" = ' + "'PD'" + "AND" + '"CITY" = ' + '0'
-    totalResOccUGA = findTotals(SummaryLayer, value_occupied, whereClause)
-    totalResVacUGA = findTotals(SummaryLayer, value_vacant, whereClause)
-    totalResUGA = totalResOccUGA + totalResVacUGA
-    line = "Total Planned Development Outside City Limits: " + str("%.2f" % totalResUGA) + '\n' + '\n'
-    f.write(line)
-    #Total Vacant
-    line = "     Total Vacant: " + str("%.2f" % total) + '\n'
-    f.write(line)
-    #Total Vacant within City Limits
-    line = '     Total Vacant Within City Limits: ' + str("%.2f" % totalResVacCity) + '\n'
-    f.write(line)
-    #Total Vacant Outside City Limits
-    line = '     Total Vacant Outside City Limits: ' + str("%.2f" % totalResVacUGA) + '\n' + '\n'
-    f.write(line)
-    #Total Developed
-    line = "     Total Developed: " + str("%.2f" % total2) + '\n'
-    f.write(line)
-    #Total Developed within City Limits
-    line = '     Total Developed Within the City Limits: ' + str("%.2f" % totalResOccCity) + '\n'
-    f.write(line)
-    #Total Developed Outside City Limits
-    line = '     Total Developed Outside City Limits: ' + str("%.2f" % totalResOccUGA) + '\n' + '\n'
-    f.write(line)
+##    #Planned Development
+##    line = 'Planned Development' + '\n'
+##    f.write(line)
+##    whereClause = '"ZoneGroup" = ' + "'PD'"
+##    total = findTotals(SummaryLayer, value_vacant, whereClause)
+##    total2 = findTotals(SummaryLayer, value_occupied, whereClause)
+##    grandtotal = total + total2
+##    line = 'Total Planned Development: ' + str("%.2f" % grandtotal) + '\n'
+##    f.write(line)
+##    #Total Planned Development City
+##    whereClause = '"ZoneGroup" = ' + "'PD'" + "AND" + '"CITY" = ' + '1'
+##    totalResVacCity = findTotals(SummaryLayer, value_vacant, whereClause)
+##    totalResOccCity = findTotals(SummaryLayer, value_occupied, whereClause)
+##    totalResCity = totalResOccCity + totalResVacCity
+##    line = "Total Planned Development Within the City: " + str("%.2f" % totalResCity) + '\n'
+##    f.write(line)
+##    #Total Planned Development UGA
+##    whereClause = '"ZoneGroup" = ' + "'PD'" + "AND" + '"CITY" = ' + '0'
+##    totalResOccUGA = findTotals(SummaryLayer, value_occupied, whereClause)
+##    totalResVacUGA = findTotals(SummaryLayer, value_vacant, whereClause)
+##    totalResUGA = totalResOccUGA + totalResVacUGA
+##    line = "Total Planned Development Outside City Limits: " + str("%.2f" % totalResUGA) + '\n' + '\n'
+##    f.write(line)
+##    #Total Vacant
+##    line = "     Total Vacant: " + str("%.2f" % total) + '\n'
+##    f.write(line)
+##    #Total Vacant within City Limits
+##    line = '     Total Vacant Within City Limits: ' + str("%.2f" % totalResVacCity) + '\n'
+##    f.write(line)
+##    #Total Vacant Outside City Limits
+##    line = '     Total Vacant Outside City Limits: ' + str("%.2f" % totalResVacUGA) + '\n' + '\n'
+##    f.write(line)
+##    #Total Developed
+##    line = "     Total Developed: " + str("%.2f" % total2) + '\n'
+##    f.write(line)
+##    #Total Developed within City Limits
+##    line = '     Total Developed Within the City Limits: ' + str("%.2f" % totalResOccCity) + '\n'
+##    f.write(line)
+##    #Total Developed Outside City Limits
+##    line = '     Total Developed Outside City Limits: ' + str("%.2f" % totalResOccUGA) + '\n' + '\n'
+##    f.write(line)
 
     #Public\Community
     line = 'Community Facilities' + '\n'
